@@ -1,7 +1,7 @@
 'use strict';
 
 const axios = require('axios');
-const Stock = require('../models/Stock');
+const Stock = require('../models/stock');
 const crypto = require('crypto');
 
 function hashIP(ip) {
