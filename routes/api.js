@@ -34,7 +34,7 @@ module.exports = function (app) {
           );
           console.log("RESULTADO API:", result.data);
 
-          const price = result.data.latestPrice;
+          const price = result.data.price || result.data.latestPrice;
 
           let doc = await Stock.findOne({ stock: s });
 
