@@ -30,7 +30,7 @@ module.exports = function (app) {
 
           // 🔧 MOCK de precio (temporal)
           const result = await axios.get(
-            `https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/${s}/quote`
+            https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/${s}/quote
           );
           console.log("RESULTADO API:", result.data);
 
