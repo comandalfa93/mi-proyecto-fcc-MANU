@@ -29,14 +29,13 @@ module.exports = function (app) {
           s = s.toUpperCase();
 
           // 🔧 MOCK de precio (temporal)
-          const result = await axios.get(
-            `https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/${s}/quote?source=iex`
-          );
-          console.log("RESULTADO API:", result.data);
+          const fakePrices = {
+            GOOG: 172.33,
+            AAPL: 189.21,
+            MSFT: 415.12
+          };
 
-          const price = result.data.price || result.data.latestPrice;
-
-          let doc = await Stock.findOne({ stock: s });
+          const price = fakePrices[s] || 100;
 
           if (!doc) {
             doc = new Stock({
