@@ -32,8 +32,9 @@ module.exports = function (app) {
           const result = await axios.get(
             `https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/${s}/quote`
           );
+          console.log("RESULTADO API:", result.data);
 
-const price = result.data.latestPrice;
+          const price = result.data.latestPrice;
 
           let doc = await Stock.findOne({ stock: s });
 
